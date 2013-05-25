@@ -1,0 +1,5 @@
+[2013-05-25 15:25:32] START
+[2013-05-25 15:25:32] EDIT welcome/controllers/default.py: -1
+[2013-05-25 15:25:51] EDIT welcome/controllers/default.py: 0
+[2013-05-25 15:26:06] EDIT welcome/controllers/default.py: 1
+[2013-05-25 15:27:55] EDIT welcome/views/default/index.html: 0
