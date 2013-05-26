@@ -19,16 +19,64 @@ def index():
     return auth.wiki()
     """
     session.counter=(session.counter or 0) + 1
-    return dict(message="Hello from my app!", counter=session.counter)
+    songs = db().select(db.song.ALL, orderby=db.song.artist)
+    return dict(message="Hello from my app!", counter=session.counter, songs=songs)
 
-def first():
-    if request.vars.visitor_name:
-        session.visitor_name = request.vars.visitor_name
-        redirect(URL('second'))
+def up():
+    song_id=request.args(0)
+    up = db.song(song_id).up_votes
+    down = db.song(song_id).down_votes
+    if session.song_id == "up":
+        pass
+    elif session.song_id == "down":
+        down-=1
+        up+=1
+        db(db.song.id == song_id).update(up_votes=up)
+        db(db.song.id == song_id).update(down_votes=down)
+    else:
+        up+=1
+        db(db.song.id == song_id).update(up_votes=up)
+    session.song_id = "up"
+    redirect(URL('index'))
     return dict()
+
+def down():
+    song_id=request.args(0)
+    up = db.song(song_id).up_votes
+    down = db.song(song_id).down_votes
+    if session.song_id == "down":
+        pass
+    elif session.song_id == "up":
+        down+=1
+        up-=1
+        db(db.song.id == song_id).update(up_votes=up)
+        db(db.song.id == song_id).update(down_votes=down)
+    else:
+        down+=1
+        db(db.song.id == song_id).update(up_votes=up)
+    session.song_id = "down"
+    redirect(URL('index'))
+    return dict()
+
+def upload():
+    form = SQLFORM(db.song, deletable=True, upload=URL('download'))
+    if form.process().accepted:
+        response.flash = "Form accepted"
+        redirect(URL('index'))
+    elif form.errors:
+        response.flash = "Form has errors"
+    return dict(form=form)
+    
+def first():
+    form = SQLFORM.factory(Field("visitor_name", label="What is your name?", requires=IS_NOT_EMPTY()))
+    if form.process().accepted:
+        session.visitor_name = form.vars.visitor_name
+        redirect(URL('second'))
+    return dict(form=form)
     
 def second():
-    return dict()
+    name = session.visitor_name
+    return dict(name=name)
 
 def user():
     """
@@ -66,7 +114,7 @@ def call():
     return service()
 
 
-@auth.requires_signature()
+#@auth.requires_signature()
 def data():
     """
     http://..../[app]/default/data/tables
