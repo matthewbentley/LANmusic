@@ -1,0 +1,527 @@
+(dp1
+S'output'
+p2
+S"<type 'exceptions.SyntaxError'> Field: unknown field type: int for up_votes"
+p3
+sS'layer'
+p4
+S'/home/matthew/devel/music/applications/Music/models/db.py'
+p5
+sS'code'
+p6
+S'# -*- coding: utf-8 -*-\n\ndb = DAL("sqlite://storage.sqlite")\n\ndb.define_table(\'song\', Field(\'file\',\'upload\'), Field(\'title\'), Field(\'artist\'), Field(\'album\'), Field(\'track_number\'), Field(\'up_votes\',\'int\'), Field(\'down_votes\',\'int\'))\n\ndb.define_table(\'queue\', Field(\'file\'))\n\ndb.song.file.requires = db.song.title.requires = IS_NOT_EMPTY()\ndb.queue.file.requires = IS_NOT_EMPTY()\ndb.queue.file.requires = IS_IN_DB(db, db.song.file)\n'
+p7
+sS'snapshot'
+p8
+(dp9
+S'exception'
+p10
+(dp11
+S'__getslice__'
+p12
+S"<method-wrapper '__getslice__' of exceptions.SyntaxError object>"
+p13
+sS'text'
+p14
+S'None'
+p15
+sS'__str__'
+p16
+S"<method-wrapper '__str__' of exceptions.SyntaxError object>"
+p17
+sS'__reduce__'
+p18
+S'<built-in method __reduce__ of exceptions.SyntaxError object>'
+p19
+sS'__dict__'
+p20
+S'{}'
+p21
+sS'__sizeof__'
+p22
+S'<built-in method __sizeof__ of exceptions.SyntaxError object>'
+p23
+sS'__init__'
+p24
+S"<method-wrapper '__init__' of exceptions.SyntaxError object>"
+p25
+sS'__setattr__'
+p26
+S"<method-wrapper '__setattr__' of exceptions.SyntaxError object>"
+p27
+sS'__reduce_ex__'
+p28
+S'<built-in method __reduce_ex__ of exceptions.SyntaxError object>'
+p29
+sS'__new__'
+p30
+S'<built-in method __new__ of type object>'
+p31
+sS'__format__'
+p32
+S'<built-in method __format__ of exceptions.SyntaxError object>'
+p33
+sS'__class__'
+p34
+S"<type 'exceptions.SyntaxError'>"
+p35
+sS'filename'
+p36
+S'None'
+p37
+sS'lineno'
+p38
+S'None'
+p39
+sS'msg'
+p40
+S"'Field: unknown field type: int for up_votes'"
+p41
+sS'__doc__'
+p42
+S"'Invalid syntax.'"
+p43
+sS'__getitem__'
+p44
+S"<method-wrapper '__getitem__' of exceptions.SyntaxError object>"
+p45
+sS'__setstate__'
+p46
+S'<built-in method __setstate__ of exceptions.SyntaxError object>'
+p47
+sS'__getattribute__'
+p48
+S"<method-wrapper '__getattribute__' of exceptions.SyntaxError object>"
+p49
+sS'print_file_and_line'
+p50
+S'None'
+p51
+sS'args'
+p52
+S"('Field: unknown field type: int for up_votes',)"
+p53
+sS'__subclasshook__'
+p54
+S'<built-in method __subclasshook__ of type object>'
+p55
+sS'offset'
+p56
+S'None'
+p57
+sS'__unicode__'
+p58
+S'<built-in method __unicode__ of exceptions.SyntaxError object>'
+p59
+sS'__delattr__'
+p60
+S"<method-wrapper '__delattr__' of exceptions.SyntaxError object>"
+p61
+sS'__repr__'
+p62
+S"<method-wrapper '__repr__' of exceptions.SyntaxError object>"
+p63
+sS'__hash__'
+p64
+S"<method-wrapper '__hash__' of exceptions.SyntaxError object>"
+p65
+ssS'evalue'
+p66
+S'Field: unknown field type: int for up_votes'
+p67
+sS'request'
+p68
+cgluon.html
+XML_unpickle
+p69
+(S's{^\x00\x00<div><table><tr><td style="font-weight:bold;vertical-align:top">ajax</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">application</td><td valign="top">:</td><td><div>Music</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">args</td><td valign="top">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">body</td><td valign="top">:</td><td><div>&lt;cStringIO.StringO object at 0x7fb0c40fe7a0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">cid</td><td valign="top">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">client</td><td valign="top">:</td><td><div>127.0.0.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">controller</td><td valign="top">:</td><td><div>appadmin</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">cookies</td><td valign="top">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top">session_data_examples</td><td valign="top">:</td><td><div>8511ea14ad35e740c07cf23a0529681b:QMi1jiZHaHmjlfTscf7D8E_KkxKfH5FzclHlx464eAoKLSorAzBPKfuZNuAGbkPOqlJJ33IbKtGJH3tBFZgF16ykz8bT35TxpERpbEvOQBSjQb1Nto1K6VPj8ko7b_fnSTeIDqvzzYsY7EiXc6xghxa9j40mNDMDdJUTXC1DJTSBMbC05sOoDDPz061OeyBfSwRsn6ZWbwloslbMMXf95D6AyuVdyBxfggRvc5nGlsiUiqd98ARdsAI-xFI-vd-PqRl2PIWi1cCNUTkgsfxj6DkRVS-now3gJaVoSUsQ28vyKJZJEGUJM_tktn3u4oi3<table><tr><td style="font-weight:bold;vertical-align:top">comment</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">domain</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">expires</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">httponly</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">max-age</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">path</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">secure</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">version</td><td valign="top">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">session_id_admin</td><td valign="top">:</td><td><div>127.0.0.1-d4127a88-fa73-467d-aa3a-2537ba4a57e1<table><tr><td style="font-weight:bold;vertical-align:top">comment</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">domain</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">expires</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">httponly</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">max-age</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">path</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">secure</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">version</td><td valign="top">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">session_id_music</td><td valign="top">:</td><td><div>127.0.0.1-fdc62223-dab3-4ca8-b4c4-4ad03a074b1c<table><tr><td style="font-weight:bold;vertical-align:top">comment</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">domain</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">expires</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">httponly</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">max-age</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">path</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">secure</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">version</td><td valign="top">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">session_id_welcome</td><td valign="top">:</td><td><div>127.0.0.1-882d7922-3237-4da5-85e6-9247b77849e1<table><tr><td style="font-weight:bold;vertical-align:top">comment</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">domain</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">expires</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">httponly</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">max-age</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">path</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">secure</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">version</td><td valign="top">:</td><td><div></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">env</td><td valign="top">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top">app_folders</td><td valign="top">:</td><td><div>set([&#x27;/home/matthew/devel/music/applications/examples/&#x27;, &#x27;/home/matthew/devel/music/applications/welcome/&#x27;, &#x27;/home/matthew/devel/music/applications/Music/&#x27;, &#x27;/home/matthew/devel/music/applications/admin/&#x27;])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">applications_parent</td><td valign="top">:</td><td><div>/home/matthew/devel/music</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">cmd_args</td><td valign="top">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">cmd_options</td><td valign="top">:</td><td><div>&lt;Values at 0x24046c8: {&#x27;verbose&#x27;: False, &#x27;ip&#x27;: &#x27;127.0.0.1&#x27;, &#x27;with_scheduler&#x27;: False, &#x27;ips&#x27;: [&#x27;127.0.1.1&#x27;], &#x27;shutdown_timeout&#x27;: 5, &#x27;taskbar&#x27;: False, &#x27;with_coverage&#x27;: False, &#x27;port&#x27;: 8000, &#x27;maxthreads&#x27;: None, &#x27;softcron&#x27;: False, &#x27;server_name&#x27;: &#x27;matthew.laptop&#x27;, &#x27;bpython&#x27;: False, &#x27;nogui&#x27;: False, &#x27;pid_filename&#x27;: &#x27;httpserver.pid&#x27;, &#x27;extcron&#x27;: False, &#x27;runcron&#x27;: False, &#x27;run_system_tests&#x27;: False, &#x27;test&#x27;: None, &#x27;folder&#x27;: &#x27;/home/matthew/devel/music&#x27;, &#x27;config&#x27;: &#x27;&#x27;, &#x27;minthreads&#x27;: None, &#x27;winservice&#x27;: &#x27;&#x27;, &#x27;shell&#x27;: None, &#x27;run&#x27;: &#x27;&#x27;, &#x27;log_filename&#x27;: &#x27;httpserver.log&#x27;, &#x27;debuglevel&#x27;: 30, &#x27;args&#x27;: [&#x27;&#x27;], &#x27;socket_timeout&#x27;: 5, &#x27;ssl_ca_certificate&#x27;: None, &#x27;scheduler&#x27;: None, &#x27;profiler_filename&#x27;: None, &#x27;ssl_private_key&#x27;: &#x27;&#x27;, &#x27;scheduler_groups&#x27;: None, &#x27;password&#x27;: &#x27;&lt;ask&gt;&#x27;, &#x27;request_queue_size&#x27;: 5, &#x27;ssl_certificate&#x27;: &#x27;&#x27;, &#x27;cronjob&#x27;: False, &#x27;numthreads&#x27;: None, &#x27;quiet&#x27;: False, &#x27;interfaces&#x27;: None, &#x27;import_models&#x27;: False, &#x27;timeout&#x27;: 10, &#x27;plain&#x27;: False, &#x27;nobanner&#x27;: False}&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">db_sessions</td><td valign="top">:</td><td><div>set([])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">debugging</td><td valign="top">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">gluon_parent</td><td valign="top">:</td><td><div>/home/matthew/devel/music</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">http_accept</td><td valign="top">:</td><td><div>text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">http_accept_charset</td><td valign="top">:</td><td><div>ISO-8859-1,utf-8;q=0.7,*;q=0.3</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">http_accept_encoding</td><td valign="top">:</td><td><div>gzip,deflate,sdch</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">http_accept_language</td><td valign="top">:</td><td><div>en-US,en;q=0.8,fr;q=0.6</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">http_connection</td><td valign="top">:</td><td><div>keep-alive</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">http_cookie</td><td valign="top">:</td><td><div>session_data_examples=&quot;8511ea14ad35e740c07cf23a0529681b:QMi1jiZHaHmjlfTscf7D8E_KkxKfH5FzclHlx464eAoKLSorAzBPKfuZNuAGbkPOqlJJ33IbKtGJH3tBFZgF16ykz8bT35TxpERpbEvOQBSjQb1Nto1K6VPj8ko7b_fnSTeIDqvzzYsY7EiXc6xghxa9j40mNDMDdJUTXC1DJTSBMbC05sOoDDPz061OeyBfSwRsn6ZWbwloslbMMXf95D6AyuVdyBxfggRvc5nGlsiUiqd98ARdsAI-xFI-vd-PqRl2PIWi1cCNUTkgsfxj6DkRVS-now3gJaVoSUsQ28vyKJZJEGUJM_tktn3u4oi3&quot;; session_id_welcome=127.0.0.1-882d7922-3237-4da5-85e6-9247b77849e1; session_id_music=127.0.0.1-fdc62223-dab3-4ca8-b4c4-4ad03a074b1c; session_id_admin=127.0.0.1-d4127a88-fa73-467d-aa3a-2537ba4a57e1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">http_host</td><td valign="top">:</td><td><div>127.0.0.1:8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">http_referer</td><td valign="top">:</td><td><div>http://127.0.0.1:8000/Music/appadmin/select/db?query=db.queue.id%3E0</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">http_user_agent</td><td valign="top">:</td><td><div>Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">is_jython</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">is_pypy</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">local_hosts</td><td valign="top">:</td><td><div><table><tr><td><div>matthew.laptop</div></td></tr><tr><td><div>::1</div></td></tr><tr><td><div>127.0.1.1</div></td></tr><tr><td><div>::ffff:127.0.0.1</div></td></tr><tr><td><div>127.0.0.1</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">path_info</td><td valign="top">:</td><td><div>/Music/appadmin/index</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">query_string</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">remote_addr</td><td valign="top">:</td><td><div>127.0.0.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">remote_port</td><td valign="top">:</td><td><div>36867</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">request_method</td><td valign="top">:</td><td><div>GET</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">request_uri</td><td valign="top">:</td><td><div>/Music/appadmin/index</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">script_name</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">server_name</td><td valign="top">:</td><td><div>matthew.laptop</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">server_port</td><td valign="top">:</td><td><div>8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">server_protocol</td><td valign="top">:</td><td><div>HTTP/1.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">server_software</td><td valign="top">:</td><td><div>Rocket 1.2.6</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">web2py_path</td><td valign="top">:</td><td><div>/home/matthew/devel/music</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">web2py_version</td><td valign="top">:</td><td><div>2.4.7-stable+timestamp.2013.05.24.17.48.47</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi_errors</td><td valign="top">:</td><td><div>&lt;open file &#x27;&lt;stderr&gt;&#x27;, mode &#x27;w&#x27; at 0x7fb10167b1e0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi_file_wrapper</td><td valign="top">:</td><td><div>&lt;class wsgiref.util.FileWrapper at 0x234d3f8&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi_input</td><td valign="top">:</td><td><div>&lt;socket._fileobject object at 0x7fb0f082f0d0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi_multiprocess</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi_multithread</td><td valign="top">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi_run_once</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi_url_scheme</td><td valign="top">:</td><td><div>http</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi_version</td><td valign="top">:</td><td><div><table><tr><td><div>1</div></td></tr><tr><td><div>0</div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">extension</td><td valign="top">:</td><td><div>html</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">folder</td><td valign="top">:</td><td><div>/home/matthew/devel/music/applications/Music/</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">function</td><td valign="top">:</td><td><div>index</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">get_vars</td><td valign="top">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">global_settings</td><td valign="top">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top">app_folders</td><td valign="top">:</td><td><div>set([&#x27;/home/matthew/devel/music/applications/examples/&#x27;, &#x27;/home/matthew/devel/music/applications/welcome/&#x27;, &#x27;/home/matthew/devel/music/applications/Music/&#x27;, &#x27;/home/matthew/devel/music/applications/admin/&#x27;])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">applications_parent</td><td valign="top">:</td><td><div>/home/matthew/devel/music</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">cmd_args</td><td valign="top">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">cmd_options</td><td valign="top">:</td><td><div>&lt;Values at 0x24046c8: {&#x27;verbose&#x27;: False, &#x27;ip&#x27;: &#x27;127.0.0.1&#x27;, &#x27;with_scheduler&#x27;: False, &#x27;ips&#x27;: [&#x27;127.0.1.1&#x27;], &#x27;shutdown_timeout&#x27;: 5, &#x27;taskbar&#x27;: False, &#x27;with_coverage&#x27;: False, &#x27;port&#x27;: 8000, &#x27;maxthreads&#x27;: None, &#x27;softcron&#x27;: False, &#x27;server_name&#x27;: &#x27;matthew.laptop&#x27;, &#x27;bpython&#x27;: False, &#x27;nogui&#x27;: False, &#x27;pid_filename&#x27;: &#x27;httpserver.pid&#x27;, &#x27;extcron&#x27;: False, &#x27;runcron&#x27;: False, &#x27;run_system_tests&#x27;: False, &#x27;test&#x27;: None, &#x27;folder&#x27;: &#x27;/home/matthew/devel/music&#x27;, &#x27;config&#x27;: &#x27;&#x27;, &#x27;minthreads&#x27;: None, &#x27;winservice&#x27;: &#x27;&#x27;, &#x27;shell&#x27;: None, &#x27;run&#x27;: &#x27;&#x27;, &#x27;log_filename&#x27;: &#x27;httpserver.log&#x27;, &#x27;debuglevel&#x27;: 30, &#x27;args&#x27;: [&#x27;&#x27;], &#x27;socket_timeout&#x27;: 5, &#x27;ssl_ca_certificate&#x27;: None, &#x27;scheduler&#x27;: None, &#x27;profiler_filename&#x27;: None, &#x27;ssl_private_key&#x27;: &#x27;&#x27;, &#x27;scheduler_groups&#x27;: None, &#x27;password&#x27;: &#x27;&lt;ask&gt;&#x27;, &#x27;request_queue_size&#x27;: 5, &#x27;ssl_certificate&#x27;: &#x27;&#x27;, &#x27;cronjob&#x27;: False, &#x27;numthreads&#x27;: None, &#x27;quiet&#x27;: False, &#x27;interfaces&#x27;: None, &#x27;import_models&#x27;: False, &#x27;timeout&#x27;: 10, &#x27;plain&#x27;: False, &#x27;nobanner&#x27;: False}&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">db_sessions</td><td valign="top">:</td><td><div>set([])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">debugging</td><td valign="top">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">gluon_parent</td><td valign="top">:</td><td><div>/home/matthew/devel/music</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">is_jython</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">is_pypy</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">local_hosts</td><td valign="top">:</td><td><div><table><tr><td><div>matthew.laptop</div></td></tr><tr><td><div>::1</div></td></tr><tr><td><div>127.0.1.1</div></td></tr><tr><td><div>::ffff:127.0.0.1</div></td></tr><tr><td><div>127.0.0.1</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">web2py_version</td><td valign="top">:</td><td><div>2.4.7-stable+timestamp.2013.05.24.17.48.47</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">is_https</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">is_local</td><td valign="top">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">is_restful</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">now</td><td valign="top">:</td><td><div>datetime.datetime(2013, 5, 25, 16, 44, 58, 188660)</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">post_vars</td><td valign="top">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">raw_args</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">raw_extension</td><td valign="top">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">url</td><td valign="top">:</td><td><div>/Music/appadmin/index</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">utcnow</td><td valign="top">:</td><td><div>datetime.datetime(2013, 5, 25, 23, 44, 58, 188678)</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">uuid</td><td valign="top">:</td><td><div>Music/127.0.0.1.2013-05-25.16-44-58.25c852fb-2de5-4269-9d5e-8854444cd992</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">vars</td><td valign="top">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi</td><td valign="top">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top">environ</td><td valign="top">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top">HTTP_ACCEPT</td><td valign="top">:</td><td><div>text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">HTTP_ACCEPT_CHARSET</td><td valign="top">:</td><td><div>ISO-8859-1,utf-8;q=0.7,*;q=0.3</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">HTTP_ACCEPT_ENCODING</td><td valign="top">:</td><td><div>gzip,deflate,sdch</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">HTTP_ACCEPT_LANGUAGE</td><td valign="top">:</td><td><div>en-US,en;q=0.8,fr;q=0.6</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">HTTP_CONNECTION</td><td valign="top">:</td><td><div>keep-alive</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">HTTP_COOKIE</td><td valign="top">:</td><td><div>session_data_examples=&quot;8511ea14ad35e740c07cf23a0529681b:QMi1jiZHaHmjlfTscf7D8E_KkxKfH5FzclHlx464eAoKLSorAzBPKfuZNuAGbkPOqlJJ33IbKtGJH3tBFZgF16ykz8bT35TxpERpbEvOQBSjQb1Nto1K6VPj8ko7b_fnSTeIDqvzzYsY7EiXc6xghxa9j40mNDMDdJUTXC1DJTSBMbC05sOoDDPz061OeyBfSwRsn6ZWbwloslbMMXf95D6AyuVdyBxfggRvc5nGlsiUiqd98ARdsAI-xFI-vd-PqRl2PIWi1cCNUTkgsfxj6DkRVS-now3gJaVoSUsQ28vyKJZJEGUJM_tktn3u4oi3&quot;; session_id_welcome=127.0.0.1-882d7922-3237-4da5-85e6-9247b77849e1; session_id_music=127.0.0.1-fdc62223-dab3-4ca8-b4c4-4ad03a074b1c; session_id_admin=127.0.0.1-d4127a88-fa73-467d-aa3a-2537ba4a57e1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">HTTP_HOST</td><td valign="top">:</td><td><div>127.0.0.1:8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">HTTP_REFERER</td><td valign="top">:</td><td><div>http://127.0.0.1:8000/Music/appadmin/select/db?query=db.queue.id%3E0</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">HTTP_USER_AGENT</td><td valign="top">:</td><td><div>Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.43 Safari/537.31</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">PATH_INFO</td><td valign="top">:</td><td><div>/Music/appadmin/index</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">QUERY_STRING</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">REMOTE_ADDR</td><td valign="top">:</td><td><div>127.0.0.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">REMOTE_PORT</td><td valign="top">:</td><td><div>36867</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">REQUEST_METHOD</td><td valign="top">:</td><td><div>GET</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">REQUEST_URI</td><td valign="top">:</td><td><div>/Music/appadmin/index</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">SCRIPT_NAME</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">SERVER_NAME</td><td valign="top">:</td><td><div>matthew.laptop</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">SERVER_PORT</td><td valign="top">:</td><td><div>8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">SERVER_PROTOCOL</td><td valign="top">:</td><td><div>HTTP/1.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">SERVER_SOFTWARE</td><td valign="top">:</td><td><div>Rocket 1.2.6</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi.errors</td><td valign="top">:</td><td><div>&lt;open file &#x27;&lt;stderr&gt;&#x27;, mode &#x27;w&#x27; at 0x7fb10167b1e0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi.file_wrapper</td><td valign="top">:</td><td><div>&lt;class wsgiref.util.FileWrapper at 0x234d3f8&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi.input</td><td valign="top">:</td><td><div>&lt;cStringIO.StringO object at 0x7fb0c40fe7a0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi.multiprocess</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi.multithread</td><td valign="top">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi.run_once</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi.url_scheme</td><td valign="top">:</td><td><div>http</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi.version</td><td valign="top">:</td><td><div>1</div></td></tr></table></div></td></tr></table></div></td></tr></table></div>'
+tRp70
+sS'frames'
+p71
+(lp72
+(dp73
+S'file'
+p74
+S'/home/matthew/devel/music/gluon/restricted.py'
+p75
+sS'dump'
+p76
+(dp77
+S'environment'
+p78
+S"{'A': <class 'gluon.html.A'>, 'ANY_OF': <class 'gluon.validators.ANY_OF'>, 'B': <class 'gluon.html.B'>, 'BEAUTIFY': <class 'gluon.html.BEAUTIFY'>, 'BODY': <class 'gluon.html.BODY'>, 'BR': <class 'gluon.html.BR'>, 'BUTTON': <class 'gluon.html.BUTTON'>, 'CAT': <class 'gluon.html.CAT'>, 'CENTER': <class 'gluon.html.CENTER'>, 'CLEANUP': <class 'gluon.validators.CLEANUP'>, ...}"
+p79
+sS'ccode'
+p80
+S'<code object <module> at 0x7fb0d40b8330, file "/...l/music/applications/Music/models/db.py", line 3>'
+p81
+ssS'lnum'
+p82
+I212
+sS'lines'
+p83
+(dp84
+I207
+S'    try:'
+p85
+sI208
+S'        if isinstance(code, types.CodeType):'
+p86
+sI209
+S'            ccode = code'
+p87
+sI210
+S'        else:'
+p88
+sI211
+S'            ccode = compile2(code, layer)'
+p89
+sI212
+S'        exec ccode in environment'
+p90
+sI213
+S'    except HTTP:'
+p91
+sI214
+S'        raise'
+p92
+sI215
+S'    except RestrictedError:'
+p93
+sI216
+S'        # do not encapsulate (obfuscate) the original RestrictedError'
+p94
+ssS'call'
+p95
+S'(code=\'# -*- coding: utf-8 -*-\\n\\ndb = DAL("sqlite://stor...queue.file.requires = IS_IN_DB(db, db.song.file)\\n\', environment={\'A\': <class \'gluon.html.A\'>, \'ANY_OF\': <class \'gluon.validators.ANY_OF\'>, \'B\': <class \'gluon.html.B\'>, \'BEAUTIFY\': <class \'gluon.html.BEAUTIFY\'>, \'BODY\': <class \'gluon.html.BODY\'>, \'BR\': <class \'gluon.html.BR\'>, \'BUTTON\': <class \'gluon.html.BUTTON\'>, \'CAT\': <class \'gluon.html.CAT\'>, \'CENTER\': <class \'gluon.html.CENTER\'>, \'CLEANUP\': <class \'gluon.validators.CLEANUP\'>, ...}, layer=\'/home/matthew/devel/music/applications/Music/models/db.py\')'
+p96
+sS'func'
+p97
+S'restricted'
+p98
+sa(dp99
+g74
+S'/home/matthew/devel/music/applications/Music/models/db.py'
+p100
+sg76
+(dp101
+S'Field'
+p102
+S"<class 'gluon.dal.Field'>"
+p103
+sS'db.define_table'
+p104
+S'<bound method DAL.define_table of <DAL uri="sqlite://storage.sqlite">>'
+p105
+sS'db'
+p106
+S'<DAL uri="sqlite://storage.sqlite">'
+p107
+ssg82
+I5
+sg83
+(dp108
+I2
+S''
+sI3
+S'db = DAL("sqlite://storage.sqlite")'
+p109
+sI4
+S''
+sI5
+S"db.define_table('song', Field('file','upload'), Field('title'), Field('artist'), Field('album'), Field('track_number'), Field('up_votes','int'), Field('down_votes','int'))"
+p110
+sI6
+S''
+sI7
+S"db.define_table('queue', Field('file'))"
+p111
+sI8
+S''
+sI9
+S'db.song.file.requires = db.song.title.requires = IS_NOT_EMPTY()'
+p112
+sI10
+S'db.queue.file.requires = IS_NOT_EMPTY()'
+p113
+sI11
+S'db.queue.file.requires = IS_IN_DB(db, db.song.file)'
+p114
+ssg95
+S'()'
+p115
+sg97
+S'<module>'
+p116
+sa(dp117
+g74
+S'/home/matthew/devel/music/gluon/dal.py'
+p118
+sg76
+(dp119
+S'fields'
+p120
+S'(<gluon.dal.Field object>, <gluon.dal.Field object>, <gluon.dal.Field object>, <gluon.dal.Field object>, <gluon.dal.Field object>, <gluon.dal.Field object>, <gluon.dal.Field object>)'
+p121
+sS'self'
+p122
+S'<DAL uri="sqlite://storage.sqlite">'
+p123
+sS'args'
+p124
+g21
+sS'tablename'
+p125
+S"'song'"
+p126
+sS'table'
+p127
+S'undefined'
+p128
+sS'self.lazy_define_table'
+p129
+S'<bound method DAL.lazy_define_table of <DAL uri="sqlite://storage.sqlite">>'
+p130
+ssg82
+I7804
+sg83
+(dp131
+I7808
+S''
+sI7799
+S'                    % (tablename,invalid_args))'
+p132
+sI7800
+S'        if self._lazy_tables and not tablename in self._LAZY_TABLES:'
+p133
+sI7801
+S'            self._LAZY_TABLES[tablename] = (tablename,fields,args)'
+p134
+sI7802
+S'            table = None'
+p135
+sI7803
+S'        else:'
+p136
+sI7804
+S'            table = self.lazy_define_table(tablename,*fields,**args)'
+p137
+sI7805
+S'        if not tablename in self.tables:'
+p138
+sI7806
+S'            self.tables.append(tablename)'
+p139
+sI7807
+S'        return table'
+p140
+ssg95
+S'(self=<DAL uri="sqlite://storage.sqlite">, tablename=\'song\', *fields=(<gluon.dal.Field object>, <gluon.dal.Field object>, <gluon.dal.Field object>, <gluon.dal.Field object>, <gluon.dal.Field object>, <gluon.dal.Field object>, <gluon.dal.Field object>), **args={})'
+p141
+sg97
+S'define_table'
+p142
+sa(dp143
+g74
+S'/home/matthew/devel/music/gluon/dal.py'
+p144
+sg76
+(dp145
+S'polymodel'
+p146
+S'None'
+p147
+ssg82
+I7841
+sg83
+(dp148
+I7840
+S'                    fake_migrate=fake_migrate,'
+p149
+sI7841
+S'                    polymodel=polymodel)'
+p150
+sI7842
+S'            finally:'
+p151
+sI7843
+S'                GLOBAL_LOCKER.release()'
+p152
+sI7844
+S'        else:'
+p153
+sI7845
+S'            table._dbt = None'
+p154
+sI7836
+S'            try:'
+p155
+sI7837
+S'                GLOBAL_LOCKER.acquire()'
+p156
+sI7838
+S'                self._lastsql = self._adapter.create_table('
+p157
+sI7839
+S'                    table,migrate=migrate,'
+p158
+ssg95
+S'(self=<DAL uri="sqlite://storage.sqlite">, tablename=\'song\', *fields=(<gluon.dal.Field object>, <gluon.dal.Field object>, <gluon.dal.Field object>, <gluon.dal.Field object>, <gluon.dal.Field object>, <gluon.dal.Field object>, <gluon.dal.Field object>), **args={})'
+p159
+sg97
+S'lazy_define_table'
+p160
+sa(dp161
+g74
+S'/home/matthew/devel/music/gluon/dal.py'
+p162
+sg76
+(dp163
+S'field_type'
+p164
+S"'int'"
+p165
+sS'field_name'
+p166
+S"'up_votes'"
+p167
+ssg82
+I871
+sg83
+(dp168
+I866
+S'                                         fieldname=field_name, srid=srid,'
+p169
+sI867
+S'                                         dimension=dimension)'
+p170
+sI868
+S'                    postcreation_fields.append(ftype)'
+p171
+sI869
+S'            elif not field_type in types:'
+p172
+sI870
+S"                raise SyntaxError('Field: unknown field type: %s for %s' % \\"
+p173
+sI871
+S'                    (field_type, field_name))'
+p174
+sI872
+S'            else:'
+p175
+sI873
+S'                ftype = types[field_type]\\'
+p176
+sI874
+S'                     % dict(length=field.length)'
+p177
+sI875
+S"            if not field_type.startswith('id') and \\"
+p178
+ssg95
+S'(self=<gluon.dal.SQLiteAdapter object>, table=<Table song (id,file,title,artist,album,track_number,up_votes,down_votes)>, migrate=True, fake_migrate=False, polymodel=None)'
+p179
+sg97
+S'create_table'
+p180
+sasS'pyver'
+p181
+S'Python 2.7.5: /usr/bin/python (prefix: /usr)'
+p182
+sS'session'
+p183
+g69
+(S'sv\x02\x00\x00<div><table><tr><td style="font-weight:bold;vertical-align:top">counter</td><td valign="top">:</td><td><div>84</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">flash</td><td valign="top">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">last_orderby</td><td valign="top">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">last_query</td><td valign="top">:</td><td><div>db.queue.id&gt;0</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">visitor_name</td><td valign="top">:</td><td><div>Matthew</div></td></tr></table></div>'
+tRp184
+sS'etype'
+p185
+S"<type 'exceptions.SyntaxError'>"
+p186
+sS'date'
+p187
+S'Sat May 25 16:44:58 2013'
+p188
+sS'response'
+p189
+g69
+(S's\xc0\x11\x00\x00<div><table><tr><td style="font-weight:bold;vertical-align:top">body</td><td valign="top">:</td><td><div>&lt;cStringIO.StringO object at 0x7fb0c40fec70&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">cookies</td><td valign="top">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top">session_id_music</td><td valign="top">:</td><td><div>127.0.0.1-fdc62223-dab3-4ca8-b4c4-4ad03a074b1c<table><tr><td style="font-weight:bold;vertical-align:top">comment</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">domain</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">expires</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">httponly</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">max-age</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">path</td><td valign="top">:</td><td><div>/</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">secure</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">version</td><td valign="top">:</td><td><div></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">delimiters</td><td valign="top">:</td><td><div><table><tr><td><div>{{</div></td></tr><tr><td><div>}}</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">files</td><td valign="top">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">flash</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">generic_patterns</td><td valign="top">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">headers</td><td valign="top">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top">X-Powered-By</td><td valign="top">:</td><td><div>web2py</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">menu</td><td valign="top">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">meta</td><td valign="top">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">models_to_run</td><td valign="top">:</td><td><div><table><tr><td><div>^\\w+\\.py$</div></td></tr><tr><td><div>^appadmin/\\w+\\.py$</div></td></tr><tr><td><div>^appadmin/index/\\w+\\.py$</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">postprocessing</td><td valign="top">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">session_cookie_expires</td><td valign="top">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">session_data_name</td><td valign="top">:</td><td><div>session_data_music</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">session_file</td><td valign="top">:</td><td><div>&lt;open file &#x27;/home/matthew/devel/music/applications/Music/sessions/127.0.0.1-fdc62223-dab3-4ca8-b4c4-4ad03a074b1c&#x27;, mode &#x27;rb+&#x27; at 0x7fb0c4121e40&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">session_filename</td><td valign="top">:</td><td><div>/home/matthew/devel/music/applications/Music/sessions/127.0.0.1-fdc62223-dab3-4ca8-b4c4-4ad03a074b1c</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">session_id</td><td valign="top">:</td><td><div>127.0.0.1-fdc62223-dab3-4ca8-b4c4-4ad03a074b1c</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">session_id_name</td><td valign="top">:</td><td><div>session_id_music</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">session_locked</td><td valign="top">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">session_new</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">session_storage_type</td><td valign="top">:</td><td><div>file</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">status</td><td valign="top">:</td><td><div>200</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">view</td><td valign="top">:</td><td><div>appadmin/index.html</div></td></tr></table></div>'
+tRp190
+sS'locals'
+p191
+(dp192
+S'polymodel'
+p193
+S'None'
+p194
+sS'field_type'
+p195
+S"'int'"
+p196
+sS'sortable'
+p197
+S'7'
+sS'sql_fields_aux'
+p198
+S"{'album': {'sql': 'CHAR(512)'}, 'artist': {'sql': 'CHAR(512)'}, 'file': {'sql': 'CHAR(512)'}, 'id': {'sql': 'INTEGER PRIMARY KEY AUTOINCREMENT'}, 'title': {'sql': 'CHAR(512)'}, 'track_number': {'sql': 'CHAR(512)'}}"
+p199
+sS'TFK'
+p200
+g21
+sS'postcreation_fields'
+p201
+S'[]'
+p202
+sS'migrate'
+p203
+S'True'
+p204
+sS'fields'
+p205
+S"['id INTEGER PRIMARY KEY AUTOINCREMENT', 'file CHAR(512)', 'title CHAR(512)', 'artist CHAR(512)', 'album CHAR(512)', 'track_number CHAR(512)']"
+p206
+sS'self'
+p207
+S'<gluon.dal.SQLiteAdapter object>'
+p208
+sS'tablename'
+p209
+S"'song'"
+p210
+sS'fake_migrate'
+p211
+S'False'
+p212
+sS'db'
+p213
+S'<DAL uri="sqlite://storage.sqlite">'
+p214
+sS'field'
+p215
+S'<gluon.dal.Field object>'
+p216
+sS'ftype'
+p217
+S"'CHAR(512)'"
+p218
+sS'table'
+p219
+S'<Table song (id,file,title,artist,album,track_number,up_votes,down_votes)>'
+p220
+sS'sql_fields'
+p221
+S"{'album': {'length': 512, 'notnull': False, 'sortable': 5, 'sql': 'CHAR(512)', 'type': 'string', 'unique': False}, 'artist': {'length': 512, 'notnull': False, 'sortable': 4, 'sql': 'CHAR(512)', 'type': 'string', 'unique': False}, 'file': {'length': 512, 'notnull': False, 'sortable': 2, 'sql': 'CHAR(512)', 'type': 'upload', 'unique': False}, 'id': {'length': 512, 'notnull': False, 'sortable': 1, 'sql': 'INTEGER PRIMARY KEY AUTOINCREMENT', 'type': 'id', 'unique': False}, 'title': {'length': 512, 'notnull': False, 'sortable': 3, 'sql': 'CHAR(512)', 'type': 'string', 'unique': False}, 'track_number': {'length': 512, 'notnull': False, 'sortable': 6, 'sql': 'CHAR(512)', 'type': 'string', 'unique': False}}"
+p222
+sS'field_name'
+p223
+S"'up_votes'"
+p224
+sS'types'
+p225
+S"{'big-id': 'BIGINT PRIMARY KEY AUTOINCREMENT', 'big-reference': 'BIGINT REFERENCES %(foreign_key)s ON DELETE %(on_delete_action)s', 'bigint': 'INTEGER', 'blob': 'BLOB', 'boolean': 'CHAR(1)', 'date': 'DATE', 'datetime': 'TIMESTAMP', 'decimal': 'DOUBLE', 'double': 'DOUBLE', 'float': 'DOUBLE', ...}"
+p226
+sssS'traceback'
+p227
+S'Traceback (most recent call last):\n  File "/home/matthew/devel/music/gluon/restricted.py", line 212, in restricted\n    exec ccode in environment\n  File "/home/matthew/devel/music/applications/Music/models/db.py", line 5, in <module>\n    db.define_table(\'song\', Field(\'file\',\'upload\'), Field(\'title\'), Field(\'artist\'), Field(\'album\'), Field(\'track_number\'), Field(\'up_votes\',\'int\'), Field(\'down_votes\',\'int\'))\n  File "/home/matthew/devel/music/gluon/dal.py", line 7804, in define_table\n    table = self.lazy_define_table(tablename,*fields,**args)\n  File "/home/matthew/devel/music/gluon/dal.py", line 7841, in lazy_define_table\n    polymodel=polymodel)\n  File "/home/matthew/devel/music/gluon/dal.py", line 871, in create_table\n    (field_type, field_name))\nSyntaxError: Field: unknown field type: int for up_votes\n'
+p228
+s.

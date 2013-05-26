@@ -19,10 +19,26 @@ def index():
     return auth.wiki()
     """
     session.counter=(session.counter or 0) + 1
+    if request.args(0) == "alreadythere":
+        response.flash = "Sorry, that song is already in the queue"
+    elif request.args(0) == "tolowscore":
+        response.flash = "Sorry, that song has to many down votes"
     songs = db().select(db.song.ALL, orderby=db.song.artist)
     return dict(message="Hello from my app!", counter=session.counter, songs=songs)
 
-def up():
+def upq():
+    up('queue')
+    
+def downq():
+    down('queue')
+
+def upi():
+    up('index')
+    
+def downi():
+    down('index')
+
+def up(returnto):
     song_id=request.args(0)
     up = db.song(song_id).up_votes
     down = db.song(song_id).down_votes
@@ -37,10 +53,21 @@ def up():
         up+=1
         db(db.song.id == song_id).update(up_votes=up)
     session.song_id = "up"
-    redirect(URL('index'))
+    redirect(URL(returnto))
     return dict()
 
-def down():
+def removeLowVotes(song_id):
+    songsQ = db(db.queue.song_id == song_id).select(db.queue.ALL, orderby=db.queue.id)
+    print songsQ
+    songsO = db(db.song.id == song_id).select(db.song.ALL, orderby=db.song.id)
+    if int(songsO[0].down_votes)/3 >= int(songsO[0].up_votes):
+        try:
+            if songsQ[0]:
+                db(db.queue.song_id == song_id).delete()
+        except:
+            pass
+
+def down(returnto):
     song_id=request.args(0)
     up = db.song(song_id).up_votes
     down = db.song(song_id).down_votes
@@ -55,17 +82,41 @@ def down():
         down+=1
         db(db.song.id == song_id).update(up_votes=up)
     session.song_id = "down"
-    redirect(URL('index'))
+    removeLowVotes(song_id)
+    redirect(URL(returnto))
     return dict()
 
 def upload():
     form = SQLFORM(db.song, deletable=True, upload=URL('download'))
     if form.process().accepted:
         response.flash = "Form accepted"
+        song_id = form.vars.id
+        session.song_id = "up"
         redirect(URL('index'))
     elif form.errors:
         response.flash = "Form has errors"
     return dict(form=form)
+    
+def queue():
+    songs = db().select(db.queue.ALL, orderby=db.queue.id)
+    songsO = db().select(db.song.ALL, orderby=db.song.id)
+    return dict(songs=songs, songsO=songsO)
+    
+def addtoqueue():
+    if not request.args(0):
+        redirect(URL('index'))
+    songs = db().select(db.queue.ALL, orderby=db.queue.id)
+    songsO = db(db.song.id == request.args(0)).select(db.song.ALL, orderby=db.song.id)
+    
+    if int(songsO[0].down_votes)/2 >= int(songsO[0].up_votes):
+        redirect(URL('index',args='tolowscore'))
+    
+    for i in songs:
+        if i.song_id == request.args(0):
+            redirect(URL('index',args='alreadythere'))
+    
+    db.queue.insert(title=db(db.song.id==request.args(0)).select()[0].title, song_id=request.args(0))
+    redirect(URL('queue'))
     
 def first():
     form = SQLFORM.factory(Field("visitor_name", label="What is your name?", requires=IS_NOT_EMPTY()))

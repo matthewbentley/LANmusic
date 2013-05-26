@@ -1,82 +1,5 @@
-timestamp: 2013-05-25T15:30:38.634137
-CREATE TABLE auth_user(
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    first_name CHAR(128),
-    last_name CHAR(128),
-    email CHAR(512),
-    password CHAR(512),
-    registration_key CHAR(512),
-    reset_password_key CHAR(512),
-    registration_id CHAR(512)
-);
-success!
-timestamp: 2013-05-25T15:30:38.737313
-CREATE TABLE auth_group(
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    role CHAR(512),
-    description TEXT
-);
-success!
-timestamp: 2013-05-25T15:30:38.821564
-CREATE TABLE auth_membership(
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
-    group_id INTEGER REFERENCES auth_group (id) ON DELETE CASCADE
-);
-success!
-timestamp: 2013-05-25T15:30:38.932050
-CREATE TABLE auth_permission(
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    group_id INTEGER REFERENCES auth_group (id) ON DELETE CASCADE,
-    name CHAR(512),
-    table_name CHAR(512),
-    record_id INTEGER
-);
-success!
-timestamp: 2013-05-25T15:30:39.041580
-CREATE TABLE auth_event(
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    time_stamp TIMESTAMP,
-    client_ip CHAR(512),
-    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
-    origin CHAR(512),
-    description TEXT
-);
-success!
-timestamp: 2013-05-25T15:30:39.150884
-CREATE TABLE auth_cas(
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
-    created_on TIMESTAMP,
-    service CHAR(512),
-    ticket CHAR(512),
-    renew CHAR(1)
-);
-success!
-timestamp: 2013-05-25T16:38:40.774471
+timestamp: 2013-05-25T23:29:30.039389
 CREATE TABLE song(
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    file CHAR(512),
-    title CHAR(512),
-    artist CHAR(512),
-    album CHAR(512),
-    track_num CHAR(512)
-);
-success!
-timestamp: 2013-05-25T16:38:40.876684
-CREATE TABLE queue(
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    file CHAR(512)
-);
-success!
-timestamp: 2013-05-25T16:38:54.037387
-ALTER TABLE song ADD track_number CHAR(512);
-timestamp: 2013-05-25T16:44:00.555056
-ALTER TABLE song ADD down_votes CHAR(512);
-timestamp: 2013-05-25T16:44:00.707772
-ALTER TABLE song ADD up_votes CHAR(512);
-timestamp: 2013-05-25T18:03:02.191057
-CREATE TABLE songs(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     file CHAR(512),
     title CHAR(512),
@@ -85,5 +8,12 @@ CREATE TABLE songs(
     track_number CHAR(512),
     up_votes INTEGER,
     down_votes INTEGER
+);
+success!
+timestamp: 2013-05-25T23:29:30.163910
+CREATE TABLE queue(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    song_id CHAR(512),
+    title CHAR(512)
 );
 success!

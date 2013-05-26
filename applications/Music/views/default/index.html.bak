@@ -5,8 +5,9 @@
         <h1>Current Songs</h1>
         <h3><ul>
             {{for song in songs:}}
-            {{=LI(song.title + " by " + song.artist)}}
-            {{=A(song.up_votes, _href=URL('up',args=song.id))}} up; {{=A(song.down_votes, _href=URL('down',args=song.id))}} down
+            <li>{{=song.title + " by " + song.artist}} {{=A('+', _href=URL('addtoqueue',args=song.id))}}</li>
+            {{=A(song.up_votes, _href=URL('upi',args=song.id))}} up; 
+            {{=A(song.down_votes, _href=URL('downi',args=song.id))}} down
             {{pass}}
             </ul></h3>
         <br />
