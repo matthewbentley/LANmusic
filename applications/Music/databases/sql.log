@@ -1,4 +1,4 @@
-timestamp: 2013-05-26T08:49:47.659545
+timestamp: 2013-05-26T08:59:02.881365
 CREATE TABLE song(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     file CHAR(512),
@@ -10,7 +10,7 @@ CREATE TABLE song(
     down_votes INTEGER
 );
 success!
-timestamp: 2013-05-26T08:49:47.804273
+timestamp: 2013-05-26T08:59:03.008323
 CREATE TABLE queue(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     song_id CHAR(512),

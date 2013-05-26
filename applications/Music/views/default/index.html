@@ -2,7 +2,7 @@
 <html>
     <head></head>
     <body>
-        <h1>Current Songs</h1>
+        <h1>Available Songs</h1>
         <h3><ul>
             {{for song in songs:}}
             <li>{{=song.title + " by " + song.artist}} {{=A('+', _href=URL('addtoqueue',args=song.id))}}</li>
