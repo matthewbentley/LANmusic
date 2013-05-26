@@ -29,9 +29,9 @@ def index():
     return dict(message="Hello from my app!", counter=session.counter, songs=songs)
 
 def play(song_id,queuenum):
-    print song_id
     song = get_path(song_id)
-    send_to_sock('/tmp/music.sock', "play " + song + " " + str(queuenum))
+    folder='uploads'
+    send_to_sock('/tmp/music.sock', "play " + song + " " + str(queuenum) + " " + request.folder)
     
 def stop():
     send_to_sock('/tmp/music.sock', 'stop')
@@ -47,7 +47,6 @@ def send_to_sock(connto,data):
 
 def get_path(song_id,folder='uploads'):
     filename = db.song(song_id).file
-    print filename
     path=os.path.join(request.folder, folder, filename)
     return path
 
@@ -145,6 +144,5 @@ def addtoqueue():
     
     db.queue.insert(title=db(db.song.id==request.args(0)).select()[0].title, song_id=request.args(0))
     if start:
-        print db(db.queue.id == 1).select(db.queue.song_id)[0].song_id
         play(db(db.queue.id == 1).select(db.queue.song_id)[0].song_id,1)
     redirect(URL('queue'))

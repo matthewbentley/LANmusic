@@ -11,7 +11,6 @@
             {{pass}}
             </ul></h3>
         <br />
-        <h4><a href=upload>Upload</a></h4>
         <h5>You have visited this page {{=counter}} times</h5>
     </body>
 </html>
