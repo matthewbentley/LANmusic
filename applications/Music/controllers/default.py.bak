@@ -49,14 +49,12 @@ def next(song):
     socketname="/tmp/music.sock"
     s = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
     while 1:
-        print "2"
         try:
             s.connect(socketname)
             break
         except:
             continue 
     while 1:
-        print "3"
         try:
             s.send("next " + song)
             break
