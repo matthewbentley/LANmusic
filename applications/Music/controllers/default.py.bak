@@ -8,7 +8,9 @@
 ## - download is for downloading files uploaded in the db (does streaming)
 ## - call exposes all registered services (none by default)
 #########################################################################
-
+import os
+import vlc
+import socket
 
 def index():
     """
@@ -25,6 +27,29 @@ def index():
         response.flash = "Sorry, that song has to many down votes"
     songs = db().select(db.song.ALL, orderby=db.song.artist)
     return dict(message="Hello from my app!", counter=session.counter, songs=songs)
+
+def play(song_id,queuenum):
+    print song_id
+    song = get_path(song_id)
+    send_to_sock('/tmp/music.sock', "play " + song + " " + str(queuenum))
+    
+def stop():
+    send_to_sock('/tmp/music.sock', 'stop')
+    
+def changeQueueNum(x):
+    send_to_sock('/tmp/music.sock', 'qnum ' + x)
+
+def send_to_sock(connto,data):
+    s = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
+    s.connect(connto)
+    s.send(data)
+    s.close()
+
+def get_path(song_id,folder='uploads'):
+    filename = db.song(song_id).file
+    print filename
+    path=os.path.join(request.folder, folder, filename)
+    return path
 
 def upq():
     up('queue')
@@ -58,7 +83,6 @@ def up(returnto):
 
 def removeLowVotes(song_id):
     songsQ = db(db.queue.song_id == song_id).select(db.queue.ALL, orderby=db.queue.id)
-    print songsQ
     songsO = db(db.song.id == song_id).select(db.song.ALL, orderby=db.song.id)
     if int(songsO[0].down_votes)/3 >= int(songsO[0].up_votes):
         try:
@@ -110,74 +134,17 @@ def addtoqueue():
     
     if int(songsO[0].down_votes)/2 >= int(songsO[0].up_votes):
         redirect(URL('index',args='tolowscore'))
-    
+    count=0
+    start=False
     for i in songs:
+        count+=1
         if i.song_id == request.args(0):
             redirect(URL('index',args='alreadythere'))
+    if count==0:
+        start=True
     
     db.queue.insert(title=db(db.song.id==request.args(0)).select()[0].title, song_id=request.args(0))
+    if start:
+        print db(db.queue.id == 1).select(db.queue.song_id)[0].song_id
+        play(db(db.queue.id == 1).select(db.queue.song_id)[0].song_id,1)
     redirect(URL('queue'))
-    
-def first():
-    form = SQLFORM.factory(Field("visitor_name", label="What is your name?", requires=IS_NOT_EMPTY()))
-    if form.process().accepted:
-        session.visitor_name = form.vars.visitor_name
-        redirect(URL('second'))
-    return dict(form=form)
-    
-def second():
-    name = session.visitor_name
-    return dict(name=name)
-
-def user():
-    """
-    exposes:
-    http://..../[app]/default/user/login
-    http://..../[app]/default/user/logout
-    http://..../[app]/default/user/register
-    http://..../[app]/default/user/profile
-    http://..../[app]/default/user/retrieve_password
-    http://..../[app]/default/user/change_password
-    use @auth.requires_login()
-        @auth.requires_membership('group name')
-        @auth.requires_permission('read','table name',record_id)
-    to decorate functions that need access control
-    """
-    return dict(form=auth())
-
-
-@cache.action()
-def download():
-    """
-    allows downloading of uploaded files
-    http://..../[app]/default/download/[filename]
-    """
-    return response.download(request, db)
-
-
-def call():
-    """
-    exposes services. for example:
-    http://..../[app]/default/call/jsonrpc
-    decorate with @services.jsonrpc the functions to expose
-    supports xml, json, xmlrpc, jsonrpc, amfrpc, rss, csv
-    """
-    return service()
-
-
-#@auth.requires_signature()
-def data():
-    """
-    http://..../[app]/default/data/tables
-    http://..../[app]/default/data/create/[table]
-    http://..../[app]/default/data/read/[table]/[id]
-    http://..../[app]/default/data/update/[table]/[id]
-    http://..../[app]/default/data/delete/[table]/[id]
-    http://..../[app]/default/data/select/[table]
-    http://..../[app]/default/data/search/[table]
-    but URLs must be signed, i.e. linked with
-      A('table',_href=URL('data/tables',user_signature=True))
-    or with the signed load operator
-      LOAD('default','data.load',args='tables',ajax=True,user_signature=True)
-    """
-    return dict(form=crud())
