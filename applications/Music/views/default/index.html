@@ -2,7 +2,15 @@
 <html>
     <head></head>
     <body>
-        <h1>{{=message}}</h1>
-        <h2>Number of visits: {{=counter}}</h2>
+        <h1>Current Songs</h1>
+        <h3><ul>
+            {{for song in songs:}}
+            {{=LI(song.title + " by " + song.artist)}}
+            {{=A(song.up_votes, _href=URL('up',args=song.id))}} up; {{=A(song.down_votes, _href=URL('down',args=song.id))}} down
+            {{pass}}
+            </ul></h3>
+        <br />
+        <h4><a href=upload>Upload</a></h4>
+        <h5>You have visited this page {{=counter}} times</h5>
     </body>
 </html>

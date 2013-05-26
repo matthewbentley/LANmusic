@@ -53,3 +53,37 @@ CREATE TABLE auth_cas(
     renew CHAR(1)
 );
 success!
+timestamp: 2013-05-25T16:38:40.774471
+CREATE TABLE song(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    file CHAR(512),
+    title CHAR(512),
+    artist CHAR(512),
+    album CHAR(512),
+    track_num CHAR(512)
+);
+success!
+timestamp: 2013-05-25T16:38:40.876684
+CREATE TABLE queue(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    file CHAR(512)
+);
+success!
+timestamp: 2013-05-25T16:38:54.037387
+ALTER TABLE song ADD track_number CHAR(512);
+timestamp: 2013-05-25T16:44:00.555056
+ALTER TABLE song ADD down_votes CHAR(512);
+timestamp: 2013-05-25T16:44:00.707772
+ALTER TABLE song ADD up_votes CHAR(512);
+timestamp: 2013-05-25T18:03:02.191057
+CREATE TABLE songs(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    file CHAR(512),
+    title CHAR(512),
+    artist CHAR(512),
+    album CHAR(512),
+    track_number CHAR(512),
+    up_votes INTEGER,
+    down_votes INTEGER
+);
+success!

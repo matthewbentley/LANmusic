@@ -1,2 +1,2 @@
 {{extend 'layout.html'}}
-<h1>Hello {{=request.vars.visitor_name}}</h1>
+<h1>Hello {{=name or anonymous}}</h1>
