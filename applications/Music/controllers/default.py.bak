@@ -45,6 +45,25 @@ def send_to_sock(connto,data):
     s.send(data)
     s.close()
 
+def next(song):
+    socketname="/tmp/music.sock"
+    s = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
+    while 1:
+        print "2"
+        try:
+            s.connect(socketname)
+            break
+        except:
+            continue 
+    while 1:
+        print "3"
+        try:
+            s.send("next " + song)
+            break
+        except:
+            continue
+    s.close()
+
 def get_path(song_id,folder='uploads'):
     filename = db.song(song_id).file
     path=os.path.join(request.folder, folder, filename)
@@ -87,6 +106,7 @@ def removeLowVotes(song_id):
         try:
             if songsQ[0]:
                 db(db.queue.song_id == song_id).delete()
+                next(song_id)
         except:
             pass
 
